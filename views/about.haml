@@ -1,0 +1,13 @@
+- unless Nesta::Config.author.empty?
+  %h2 About the author
+  %p
+    - if Nesta::Config.author.has_key? "name"
+      = Nesta::Config.author["name"]
+      %br
+    - if Nesta::Config.author.has_key? "uri"
+      %a{:href => Nesta::Config.author["uri"]}= Nesta::Config.author["uri"]
+      %br
+    - if Nesta::Config.author.has_key? "email"
+      %a{:href => "mailto:#{Nesta::Config.author["email"]}"}= Nesta::Config.author["email"]
+      %br
+
